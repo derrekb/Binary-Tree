@@ -29,10 +29,10 @@ public class leafnode<X> extends Abintree<X> {
 	public <Y> bintree<Y> btMap(IBTreeF<X,Y> f){
 		return(new leafnode<Y>(f.f(this.getRootval()))); 
 		}
-	@Override
+	
+	
 	public X getRootval() {
-		// TODO Auto-generated method stub
-		return null;
+		return val;
 	}
 
 

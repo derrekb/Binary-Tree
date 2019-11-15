@@ -1,7 +1,7 @@
 package bintree;
 
 
-public class interiornode<X> extends AbinTree<X> {
+public class interiornode<X> extends Abintree<X> {
 	
 	private bintree<X> l,r;
 	
@@ -10,6 +10,10 @@ public class interiornode<X> extends AbinTree<X> {
 		l = left;
 		r = right;
 		}
+	
+	public X getRootval() {
+		return val;
+	}
 	
 	public Boolean isLeaf() { 
 		return(false);
@@ -46,6 +50,7 @@ public class interiornode<X> extends AbinTree<X> {
 	return(null);
 	}	}
 	
+
 	public <Y> bintree<Y> btMap(IBTreeF<X,Y> f)
 	{ try
 		{
@@ -56,6 +61,11 @@ public class interiornode<X> extends AbinTree<X> {
 			{ System.out.println("Error map in interiornode:" + e.getMessage());
 			return(null);
 			}
+	}
+	
+	public <X> X visit(treeVisitor<X> V) {
+		return(V.interiornode(this.));
+	}
 	}
 
 }
