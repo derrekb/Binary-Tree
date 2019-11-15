@@ -64,8 +64,8 @@ public class interiornode<X> extends Abintree<X> {
 	}
 	
 	public <X> X visit(treeVisitor<X> V) {
-		return(V.interiornode(this.));
+		return(V.interiornode( (X) this.val, l.visit(V), r.visit(V)));
 	}
 	}
 
-}
+

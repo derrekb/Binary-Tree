@@ -16,4 +16,6 @@ public interface bintree<X> {
 	
 	public <Y> bintree<Y> btMap(IBTreeF<X,Y> f);
 
+	public <X> X visit(treeVisitor<X> v);
+
 }

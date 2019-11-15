@@ -36,4 +36,10 @@ public class leafnode<X> extends Abintree<X> {
 	}
 
 
-}
+	
+	public <X> X visit(treeVisitor<X> v) {
+		return(v.leafnode((X) this.val));
+	}
+	}
+	
+
