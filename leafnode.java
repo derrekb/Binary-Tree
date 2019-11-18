@@ -5,10 +5,13 @@ package ABinTree_Quiz;
  * @param <X>
  */
 public class leafnode<X> extends Abintree<X> {
+	
+	protected X val;
 			//Methods
 	//Purpose: Implement a leafnode
 	public leafnode(X v) {
-		super(v); }
+		super(v); 
+		val = v;}
 	
 	//Purpose: To determine if this bintree is a leafnode
 	public Boolean isLeaf() {
@@ -38,7 +41,7 @@ public class leafnode<X> extends Abintree<X> {
 
 	//Purpose: To implement IbintreeVisitor V on leafnode
 	public <R> R visit(IbintreeVisitor<X,R> V) {
-		return (V.leafnode(this.getRootval()));
+		return (V.leafnode(val));
 	}
 
 	
