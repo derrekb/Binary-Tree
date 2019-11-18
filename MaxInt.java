@@ -1,4 +1,4 @@
-package ABinTree_Quiz;
+package ABinTree_Quiz_Emmanuel_Olatunde_Edwin_Navas_Elijah_Bland_Derrek_Beeck;
 /**
  * Class for PostOrderTraversal
  *Variable val: String Variable to hold value of a leafnode
@@ -13,9 +13,9 @@ public class MaxInt implements IbintreeVisitor<Integer,Integer> {
 	}
 	
 	//Purpose: To return the maximum of this interiornode
-	public Integer interiornode(Integer val, bintree<Integer> l, bintree<Integer> r) {
+	public Integer interiornode(Integer val, Integer l, Integer r) {
 		Integer res;
-		res = Math.max(val, Math.max(l.getRootval(), r.getRootval()));
+		res = Math.max(val, Math.max(l, r));
 		return res;
 	}
 
