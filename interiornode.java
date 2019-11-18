@@ -5,6 +5,7 @@ package ABinTree_Quiz;
  * @param v ==> Generic variable to hold interiornode Root Value
  * @param left ==> Variable to hold left bintree
  * @param right ==> Variable to hold right bintree
+ * 			val ==> v
  * 			l ==> left
  * 			r ==> right
  */
@@ -12,10 +13,12 @@ public class interiornode<X> extends Abintree<X> {
 
 	//Variables
 	protected bintree<X> r,l;
+	protected X val;
 	
 	//Purpose: To implement an interiornode
 	public interiornode(X v, bintree<X> left, bintree<X> right)	{
 		super(v);
+		val=v;
 		l = left;
 		r = right;}
 	
@@ -65,10 +68,7 @@ public class interiornode<X> extends Abintree<X> {
 	
 	//Purpose: To implement IbintreeVisitor V on interiornode
 	public <R> R visit(IbintreeVisitor<X,R> V) {
-		try {
-			return (V.interiornode(this.getRootval(), this.getLeftbt(), this.getRightbt()));}
-		catch(Exception e) {
-			System.out.println("Error visit in interiornode: " + e.getMessage());
-			return null;}}
+			return (V.interiornode(val, this.l.visit(V), this.r.visit(V)));}
+		
 	
 }
