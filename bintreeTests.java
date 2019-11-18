@@ -21,6 +21,9 @@ class bintreeTests {
 		bintree<String> Z = new leafnode<String>("Derek");
 		bintree<String> Y = new leafnode<String>("Elijah");
 		bintree<String> ZY = new interiornode<String>("Emmanuel",Z,Y);
+		bintree<String> E = new interiornode<String>("Moses",ZY,Y);
+		bintree<Integer> C = new interiornode<Integer>(1,DT,DL);
+		bintree<Integer> D = new interiornode<Integer>(1,C,DT);
 		IbintreeVisitor<String,String> A = new PostOrderTraversal();
 		IbintreeVisitor<Integer,Integer> B = new MaxInt();
 		
@@ -36,9 +39,12 @@ class bintreeTests {
 		assertEquals(T.btMap(x -> 2 * x).equals(DT), true);
 		assertEquals(Z.visit(A), "Derek");
 		assertEquals(ZY.visit(A), ""+"Derek"+""+"Elijah"+"Emmanuel");
+		assertEquals(E.visit(A), ""+"Derek"+""+"Elijah"+"Emmanuel"+"Elijah"+"Moses");
 		assertEquals(L.visit(B), 2);
 		assertEquals(T.visit(B), 3);
 		assertEquals(DT.visit(B), 6);
+		assertEquals(C.visit(B), 6);
+		assertEquals(D.visit(B), 6);
 	
 		}
 		
