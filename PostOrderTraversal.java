@@ -1,4 +1,4 @@
-package ABinTree_Quiz;
+package ABinTree_Quiz_Emmanuel_Olatunde_Edwin_Navas_Elijah_Bland_Derrek_Beeck;
 /**
  * Class for PostOrderTraversal
  *Variable val: String Variable to hold value of a leafnode
@@ -14,6 +14,8 @@ public class PostOrderTraversal implements IbintreeVisitor<String,String> {
 		return val;	}
 
 	//Purpose:To print out interiornode in post-order traversal
-	public String interiornode(String val, bintree<String> l, bintree<String> r) {
-	return (""+l.getRootval()+""+r.getRootval()+""+val);	}
+	public String interiornode(String val, String l, String r) {
+	return (""+l+""+r+""+val);	}
+
+	
 }
